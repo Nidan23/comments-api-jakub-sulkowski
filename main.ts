@@ -1,7 +1,9 @@
 import App from './src/app'
 import {CommentsController} from './src/controller/comments.controller'
 import {CommentService} from './src/service/comment.service'
+import {DatabaseService} from './src/service/database.service'
 
+const databaseService: DatabaseService = DatabaseService.getInstance()
 const commentService: CommentService = CommentService.getInstance()
 
 const controllers = [
