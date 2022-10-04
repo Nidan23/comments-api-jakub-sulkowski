@@ -17,11 +17,11 @@ export class CommentsController{
         this.router.post(`/comments`, makeValidateBody(CommentModel), this.addComment.bind(this))
     }
 
-    private addComment(request: Request, response: Response): Response {
-        return response.json(this.commentService.create(request.body.message, request.body.author))
+    private async addComment(request: Request, response: Response): Promise<Response> {
+        return response.json(await this.commentService.create(request.body))
     }
 
-    private getComments(request: Request, response: Response): Response {
-        return response.json(this.commentService.findAll())
+    private async getComments(request: Request, response: Response): Promise<Response> {
+        return response.json(await this.commentService.findAll())
     }
 }
