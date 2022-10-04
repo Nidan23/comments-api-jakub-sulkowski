@@ -1,6 +1,7 @@
 import * as express  from 'express'
 import { Application } from 'express'
 import * as bodyParser from 'body-parser'
+import * as cors from 'cors'
 
 export default class App {
     public app: Application
@@ -18,6 +19,9 @@ export default class App {
 
     private initMiddlewares(){
         this.app.use(bodyParser.json())
+        this.app.use(cors({
+            origin: '*'
+        }))
     }
 
     private initControllers(controllers: any[]){
