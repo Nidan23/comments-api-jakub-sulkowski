@@ -1,4 +1,4 @@
-import { app } from '../src/app';
+import { app } from '../main';
 import * as supertest from 'supertest';
 
 const request = supertest(app);

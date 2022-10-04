@@ -8,7 +8,7 @@ const controllers = [
     new CommentsController(commentService)
 ]
 
-const app = new App(
+export const app = new App(
     controllers,
     parseInt(process.env.SERVER_PORT || '3000'),
 )
