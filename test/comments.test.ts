@@ -1,5 +1,5 @@
-import app from '../app';
-import supertest from 'supertest';
+import { app } from '../src/app';
+import * as supertest from 'supertest';
 
 const request = supertest(app);
 
